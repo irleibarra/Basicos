@@ -2,7 +2,7 @@ var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
 var lineas = 30;
 var l = 0;
-var xi, xf;
+var yi, xf;
 var colorcito = "#FAA";
 
 for(l = 0; l < lineas; l++)
