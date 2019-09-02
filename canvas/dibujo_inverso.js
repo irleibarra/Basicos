@@ -3,6 +3,7 @@ var boton = document.getElementById("botoncito");
 boton.addEventListener("click", dibujoPorClick ); //a la funcion no se le pone ()pues ahi no se va a ejecutar, solo se deja saber cual va a ser.
 
 var d = document.getElementById("dibujito");
+var ancho = d.width;
 var lienzo = d.getContext("2d");
 
 
@@ -19,18 +20,17 @@ function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
 
 function dibujoPorClick()
 {
-    var xxx =  parseInt(texto.value);
-   
-    var lineas = 30;
+      
+    var lineas = parseInt(texto.value);
     var l = 0;
     var colorcito = "#FAA";
     var xi, yf;
-
+    var espacio = ancho / lineas;
 
     for(l = 0; l < lineas; l++)
     {
-        xi = 300 - (10 * (l +1));
-        yf = 300 - 10 * l;
+        xi = 300 - (espacio * (l +1));
+        yf = 300 - espacio * l;
         dibujarLinea(colorcito, xi, 0, 300, yf );
     
     }
